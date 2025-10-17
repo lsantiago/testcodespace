@@ -1,7 +1,9 @@
 {
   "name": "Programación Funcional y Reactiva - UTPL",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "11",
@@ -27,7 +29,9 @@
         "vscjava.vscode-java-pack",
         "vscjava.vscode-maven",
         "yzhang.markdown-all-in-one",
-        "bierner.markdown-preview-github-styles"
+        "bierner.markdown-preview-github-styles",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-mysql"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
@@ -35,7 +39,7 @@
     }
   },
 
-  "forwardPorts": [3000, 8080, 9000],
+  "forwardPorts": [3000, 3306, 8080, 9000],
 
   "remoteUser": "vscode"
 }
