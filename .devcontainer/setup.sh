@@ -1,19 +1,23 @@
 #!/bin/bash
+set -e
 
 echo "🚀 Configurando entorno de Programación Funcional y Reactiva..."
 
 # Instalar SDKMAN
 echo "📦 Instalando SDKMAN..."
+export SDKMAN_DIR="$HOME/.sdkman"
 curl -s "https://get.sdkman.io" | bash
+
+# Cargar SDKMAN para esta sesión
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Instalar Scala 3
 echo "📦 Instalando Scala 3..."
-sdk install scala 3.3.1
+sdk install scala 3.3.1 < /dev/null
 
 # Instalar SBT
 echo "📦 Instalando SBT..."
-sdk install sbt
+sdk install sbt < /dev/null
 
 # Instalar pip para Python
 echo "📦 Configurando pip..."
